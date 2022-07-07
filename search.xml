@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>个人ctf杂项经验(不定期更新)</title>
+      <link href="/2022/07/07/ge-ren-ctf-za-xiang-jing-yan-bu-ding-qi-geng-xin/"/>
+      <url>/2022/07/07/ge-ren-ctf-za-xiang-jing-yan-bu-ding-qi-geng-xin/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="个人ctf杂项经验-不定期更新"><a href="#个人ctf杂项经验-不定期更新" class="headerlink" title="个人ctf杂项经验(不定期更新)"></a>个人ctf杂项经验(不定期更新)</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是我个人在打ctf过程中总结的一些微不足道的经验，供我学习使用，当然也很乐意分享。<br>主要包括<br>    <strong>图片</strong><br>    <strong>视频（音频）</strong><br>    <strong>解密</strong><br>    <strong>其他</strong></p><span id="more"></span><h2 id="正片开始"><a href="#正片开始" class="headerlink" title="正片开始"></a>正片开始</h2><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><ul><li>拿到图片，先用binwalk分析，有隐藏文件就用foremost分离</li><li>jpg图片先看属性，png图片用pngcheck看是否修改了宽，使用winhex或者010editor修改回来</li><li>分析是否有lsb隐写，使用脚本或者stegslove来分析</li><li>两张一模一样的图，可能是盲水印，用mang.py脚本，也有可能是两张图的运算</li><li>如果有纯色图，颜色的十六进制编码可能和flag有关，使用ps</li></ul><h3 id="视频（音频）"><a href="#视频（音频）" class="headerlink" title="视频（音频）"></a>视频（音频）</h3><ul><li>音频文件可以试着看看频谱图(用audacity打开)</li><li>实在没啥思路可以使用deepsound看看是否有隐藏信息</li><li>wav文件有可能也有lsb隐写，用silenteye</li><li>出现明显的摩斯密码音用audacity</li><li>出现明显的拨号音，用拨号键工具</li><li>swf文件用flsh插件打开，用JPEXS Free Flash Decompiler反编译</li></ul><h3 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h3><ul><li>出现类似（♯♪♭♯♭♯¶♭♬♪♯‖§‖∮♪==）的音乐符号，使用<a href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=yinyue">音乐解码</a></li><li>出现类似（⡢⠡⡲⠁⡏⡐==）的符号，使用<a href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=mangwen">盲文解码</a></li><li>大量无规律的字符(字母加括号)，可能要用<a href="http://corpus.zhonghuayuwen.org/CpsTongji.aspx">字频统计</a></li><li>出现ook!，使用<a href="https://www.splitbrain.org/services/ook">ook!解码</a></li><li>给了key(密码)和iv(偏移量)，可能是<a href="http://tool.chacuo.net/cryptdes">AES加密或者DES加密</a></li><li>福尔摩斯小人密码<img src="/%E7%A6%8F%E5%B0%94%E6%91%A9%E6%96%AF%E5%B0%8F%E4%BA%BA%E5%AF%86%E7%A0%81.png" alt="小人密码"></li></ul><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>现在我还是比较菜的，不过也正在努力变强中！！一起加油吧。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ctf </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ctf </tag>
+            
+            <tag> misc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2022/06/14/hello-world/"/>
       <url>/2022/06/14/hello-world/</url>

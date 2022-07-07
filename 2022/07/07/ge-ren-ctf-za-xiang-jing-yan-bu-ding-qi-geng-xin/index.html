@@ -4,8 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Music！, __南筏。的blog">
-    <meta name="description" content="__南筏。的blog">
+    <meta name="keywords" content="个人ctf杂项经验(不定期更新), __南筏。的blog">
+    <meta name="description" content="个人ctf杂项经验(不定期更新)前言这是我个人在打ctf过程中总结的一些微不足道的经验，供我学习使用，当然也很乐意分享。主要包括    图片    视频（音频）    解密    其他
+
+正片开始图片
+拿到图片，先用binwalk分析，有隐">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +22,7 @@
 
     
 
-    <title>Music！ | __南筏。的blog</title>
+    <title>个人ctf杂项经验(不定期更新) | __南筏。的blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -380,12 +383,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Music！</h1>
+                    <h1 class="description center-align post-title">个人ctf杂项经验(不定期更新)</h1>
                 </div>
             </div>
         </div>
@@ -499,12 +502,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ctf/">
+                                <span class="chip bg-color">ctf</span>
+                            </a>
+                        
+                            <a href="/tags/misc/">
+                                <span class="chip bg-color">misc</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ctf/" class="post-category">
+                                ctf
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -513,7 +533,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2022-07-07
                 </div>
                 
 
@@ -522,7 +542,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    397
                 </div>
                 
 
@@ -549,7 +569,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="530" height="520" src="//music.163.com/outchain/player?type=0&amp;id=2829269414&amp;auto=1&amp;height=430"></iframe>
+                <h1 id="个人ctf杂项经验-不定期更新"><a href="#个人ctf杂项经验-不定期更新" class="headerlink" title="个人ctf杂项经验(不定期更新)"></a>个人ctf杂项经验(不定期更新)</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是我个人在打ctf过程中总结的一些微不足道的经验，供我学习使用，当然也很乐意分享。<br>主要包括<br>    <strong>图片</strong><br>    <strong>视频（音频）</strong><br>    <strong>解密</strong><br>    <strong>其他</strong></p>
+<span id="more"></span>
+<h2 id="正片开始"><a href="#正片开始" class="headerlink" title="正片开始"></a>正片开始</h2><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><ul>
+<li>拿到图片，先用binwalk分析，有隐藏文件就用foremost分离</li>
+<li>jpg图片先看属性，png图片用pngcheck看是否修改了宽，使用winhex或者010editor修改回来</li>
+<li>分析是否有lsb隐写，使用脚本或者stegslove来分析</li>
+<li>两张一模一样的图，可能是盲水印，用mang.py脚本，也有可能是两张图的运算</li>
+<li>如果有纯色图，颜色的十六进制编码可能和flag有关，使用ps</li>
+</ul>
+<h3 id="视频（音频）"><a href="#视频（音频）" class="headerlink" title="视频（音频）"></a>视频（音频）</h3><ul>
+<li>音频文件可以试着看看频谱图(用audacity打开)</li>
+<li>实在没啥思路可以使用deepsound看看是否有隐藏信息</li>
+<li>wav文件有可能也有lsb隐写，用silenteye</li>
+<li>出现明显的摩斯密码音用audacity</li>
+<li>出现明显的拨号音，用拨号键工具</li>
+<li>swf文件用flsh插件打开，用JPEXS Free Flash Decompiler反编译</li>
+</ul>
+<h3 id="解密"><a href="#解密" class="headerlink" title="解密"></a>解密</h3><ul>
+<li>出现类似（♯♪♭♯♭♯¶♭♬♪♯‖§‖∮♪==）的音乐符号，使用<a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=yinyue">音乐解码</a></li>
+<li>出现类似（⡢⠡⡲⠁⡏⡐==）的符号，使用<a target="_blank" rel="noopener" href="https://www.qqxiuzi.cn/bianma/wenbenjiami.php?s=mangwen">盲文解码</a></li>
+<li>大量无规律的字符(字母加括号)，可能要用<a target="_blank" rel="noopener" href="http://corpus.zhonghuayuwen.org/CpsTongji.aspx">字频统计</a></li>
+<li>出现ook!，使用<a target="_blank" rel="noopener" href="https://www.splitbrain.org/services/ook">ook!解码</a></li>
+<li>给了key(密码)和iv(偏移量)，可能是<a target="_blank" rel="noopener" href="http://tool.chacuo.net/cryptdes">AES加密或者DES加密</a></li>
+<li>福尔摩斯小人密码<img src="/%E7%A6%8F%E5%B0%94%E6%91%A9%E6%96%AF%E5%B0%8F%E4%BA%BA%E5%AF%86%E7%A0%81.png" alt="小人密码"></li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>现在我还是比较菜的，不过也正在努力变强中！！一起加油吧。</p>
+
                 
             </div>
             <hr/>
@@ -575,7 +621,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://nanfa996.github.io/musics/index.html">https://nanfa996.github.io/musics/index.html</a>
+                    <a href="https://nanfa996.github.io/2022/07/07/ge-ren-ctf-za-xiang-jing-yan-bu-ding-qi-geng-xin/">https://nanfa996.github.io/2022/07/07/ge-ren-ctf-za-xiang-jing-yan-bu-ding-qi-geng-xin/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -612,7 +658,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/ctf/">
+                                    <span class="chip bg-color">ctf</span>
+                                </a>
+                            
+                                <a href="/tags/misc/">
+                                    <span class="chip bg-color">misc</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1056,34 +1110,50 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/musics/index.html">
+                <a href="/2022/07/07/ge-ren-ctf-za-xiang-jing-yan-bu-ding-qi-geng-xin/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Music！">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="个人ctf杂项经验(不定期更新)">
                         
-                        <span class="card-title">Music！</span>
+                        <span class="card-title">个人ctf杂项经验(不定期更新)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            个人ctf杂项经验(不定期更新)前言这是我个人在打ctf过程中总结的一些微不足道的经验，供我学习使用，当然也很乐意分享。主要包括    图片    视频（音频）    解密    其他
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            __南筏。
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/ctf/" class="post-category">
+                                    ctf
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ctf/">
+                        <span class="chip bg-color">ctf</span>
+                    </a>
+                    
+                    <a href="/tags/misc/">
+                        <span class="chip bg-color">misc</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1091,16 +1161,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/musics/index.html">
+                <a href="/2022/06/14/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Music！">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
                         
-                        <span class="card-title">Music！</span>
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1111,7 +1181,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-14
                             </span>
                         <span class="publish-author">
                             
@@ -1121,7 +1191,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
