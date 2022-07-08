@@ -540,14 +540,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    935
+                    583
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    2 分
                 </div>
                 
 
@@ -578,43 +578,45 @@
 <pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New Post"</span>
 </code></pre>
 <blockquote>
-<p>这里的”My New Post”是你要创建文章的标题，也即<title>,注意要打&lt;strong&gt;引号&lt;/strong&gt;&lt;br&gt;  post是指定创建的布局，因为hexo默认的创建是文章布局，所以psot可以省略，当然也可以更改设置(我感觉没啥必要我就不阐述了)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h4 id="1-2草稿-draft"&gt;&lt;a href="#1-2草稿-draft" class="headerlink" title="1.2草稿(draft)"&gt;&lt;/a&gt;1.2草稿(draft)&lt;/h4&gt;&lt;p&gt;草稿（draft）布局不会显示在网站上，所以如果我们不想显示某篇文章时，可以将其移到source/-draft文件夹中&lt;br&gt;同理创建草稿时使用命令&lt;/p&gt;
-&lt;pre&gt;&lt;code class="bash"&gt;hexo new draft &lt;title&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;可以使用命令来发布草稿，此时草稿将会变成文章或页面，放置到对应的文件夹&lt;/p&gt;
-&lt;pre&gt;&lt;code class="bash"&gt;hexo publish [layout] &lt;title&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;查看草稿&lt;/p&gt;
-&lt;pre&gt;&lt;code class="bash"&gt;hexo server --draft
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id="2-文章结构"&gt;&lt;a href="#2-文章结构" class="headerlink" title="2.文章结构"&gt;&lt;/a&gt;2.文章结构&lt;/h3&gt;&lt;p&gt;创建完成一个文章后，会在-post文件夹中生成一个md文件,内容如下&lt;/p&gt;
-&lt;pre&gt;&lt;code class="markdown"&gt;---
-title: Hello World # 标题就是我们上面创建的时候指定的名字
-date: 2022/6/8 20:46:25 # 文件创建的上述文章时间
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;此时你可以在两个—中间(文件头)添加tags属性，为文章加标签&lt;br&gt;格式为tags： [a,b…]&lt;br&gt;如上述文章添加a和b标签，则md文件为&lt;/p&gt;
-&lt;pre&gt;&lt;code class="markdown"&gt;---
-title: Hello World # 标题就是我们上面创建的时候指定的名字
-date: 2022/6/8 20:46:25 # 文件创建的上述文章时间
+<p>这里的”My New Post”是你要创建文章的标题，也即title,注意要打<strong>引号</strong><br>  post是指定创建的布局，因为hexo默认的创建是文章布局，所以psot可以省略，当然也可以更改设置(我感觉没啥必要我就不阐述了)</p>
+</blockquote>
+<h4 id="1-2草稿-draft"><a href="#1-2草稿-draft" class="headerlink" title="1.2草稿(draft)"></a>1.2草稿(draft)</h4><p>草稿（draft）布局不会显示在网站上，所以如果我们不想显示某篇文章时，可以将其移到source/-draft文件夹中<br>同理创建草稿时使用命令</p>
+<pre class=" language-bash"><code class="language-bash">hexo new draft <span class="token operator">&lt;</span>title<span class="token operator">></span>
+</code></pre>
+<p>可以使用命令来发布草稿，此时草稿将会变成文章或页面，放置到对应的文件夹</p>
+<pre class=" language-bash"><code class="language-bash">hexo publish <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span>
+</code></pre>
+<p>查看草稿</p>
+<pre class=" language-bash"><code class="language-bash">hexo server --draft
+</code></pre>
+<h3 id="2-文章结构"><a href="#2-文章结构" class="headerlink" title="2.文章结构"></a>2.文章结构</h3><p>创建完成一个文章后，会在-post文件夹中生成一个md文件,内容如下</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token hr punctuation">---</span>
+title: Hello World
+date: 2022/6/8 20:46:25
+
+<span class="token hr punctuation">---</span>
+</code></pre>
+<p>此时你可以在两个—中间(文件头)添加tags属性，为文章加标签<br>格式为tags： [a,b…]<br>如上述文章添加a和b标签，则md文件为</p>
+<pre class=" language-markdown"><code class="language-markdown"><span class="token hr punctuation">---</span>
+title: Hello World
+date: 2022/6/8 20:46:25
 tags: [a,b]
----
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;注意tags引号后面有一个空格&lt;br&gt;然后在文件头的下面就可以开始愉快的写文章啦&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;文章采用的markdown来进行排版，具体的语法可以参考这个[markdown基本语法]&lt;a href="https://markdown.com.cn/basic-syntax/"&gt;https://markdown.com.cn/basic-syntax/&lt;/a&gt;&lt;br&gt;  后续我应该也会对markdown进行一个简单的总结，到时候也可以看我的文章hhh&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id="总结"&gt;&lt;a href="#总结" class="headerlink" title="总结"&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;p&gt;hexo写博客的部分就到这啦&lt;br&gt;总结就是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在命令行创建文章&lt;/li&gt;
-&lt;li&gt;在md文件里面进行编辑&lt;/li&gt;
-&lt;li&gt;最后部署到服务端&lt;/li&gt;
-&lt;/ul&gt;
-</title></p></blockquote>
+
+<span class="token hr punctuation">---</span>
+</code></pre>
+<blockquote>
+<p>注意tags引号后面有一个空格<br>然后在文件头的下面就可以开始愉快的写文章啦</p>
+</blockquote>
+<blockquote>
+<p>文章采用的markdown来进行排版，具体的语法可以参考这个<a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">markdown基本语法</a><br>  后续我应该也会对markdown进行一个简单的总结，到时候也可以看我的文章hhh</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>hexo写博客的部分就到这啦<br>总结就是：</p>
+<ul>
+<li>在命令行创建文章</li>
+<li>在md文件里面进行编辑</li>
+<li>最后部署到服务端</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -1399,7 +1401,7 @@ tags: [a,b]
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">1.4k</span>
+                        class="white-color">1.1k</span>
             
             
             
