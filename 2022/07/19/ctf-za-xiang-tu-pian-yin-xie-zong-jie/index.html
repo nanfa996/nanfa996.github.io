@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, __南筏。的blog">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="ctf杂项图片隐写总结, __南筏。的blog">
+    <meta name="description" content="ctf杂项图片隐写总结1.前言ctf杂项里面，有很大一部分都是关于图片隐写的，不是说整个题都是隐写，但会有这个题的关键步骤会涉及到图片隐写的情况，得到的信息可能就是flag或者是一些解题的关键信息，本文就对常见的隐写类型进行一个系统性的总结">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
 
     
 
-    <title>Hello World | __南筏。的blog</title>
+    <title>ctf杂项图片隐写总结 | __南筏。的blog</title>
     <link rel="icon" type="image/png" href="/nan.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -380,12 +380,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">ctf杂项图片隐写总结</h1>
                 </div>
             </div>
         </div>
@@ -499,12 +499,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/ctf/">
+                                <span class="chip bg-color">ctf</span>
+                            </a>
+                        
+                            <a href="/tags/misc/">
+                                <span class="chip bg-color">misc</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/ctf/" class="post-category">
+                                ctf
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -513,7 +530,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-06-14
+                    2022-07-19
                 </div>
                 
 
@@ -522,14 +539,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    926
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -549,19 +566,74 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+                <h1 id="ctf杂项图片隐写总结"><a href="#ctf杂项图片隐写总结" class="headerlink" title="ctf杂项图片隐写总结"></a>ctf杂项图片隐写总结</h1><h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h2><p>ctf杂项里面，有很大一部分都是关于图片隐写的，不是说整个题都是隐写，但会有这个题的关键步骤会涉及到图片隐写的情况，得到的信息可能就是flag或者是一些解题的关键信息，本文就对常见的隐写类型进行一个系统性的总结（后期遇到其他类型的隐写也会不定期更新）<br>后文的flag或者关键信息都会统一用flag来代替</p>
+<h2 id="2-隐写类型总结"><a href="#2-隐写类型总结" class="headerlink" title="2.隐写类型总结"></a>2.隐写类型总结</h2><p>  常见的隐写类型主要包括：</p>
+<p>   <strong>图片信息隐写</strong><br>   <strong>lsb隐写</strong><br>   <strong>outguess隐写</strong><br>   <strong>f5隐写</strong></p>
+<h3 id="2-1-图片信息隐写"><a href="#2-1-图片信息隐写" class="headerlink" title="2.1 图片信息隐写"></a>2.1 图片信息隐写</h3><ul>
+<li>flag直接放在二进制数据流里面（常常出现在文件二进制的末尾）<br>使用winhex或者010editor打开直接查看文件末尾</li>
+<li>flag藏在属性里面（一般是jpg格式的图片）<br>右键详细属性查看</li>
+<li>修改图片的宽高<br>使用winhex或者010editor直接修改即可</li>
+</ul>
+<h3 id="2-2-lsb隐写"><a href="#2-2-lsb隐写" class="headerlink" title="2.2 lsb隐写"></a>2.2 lsb隐写</h3><p>  LSB就是最低有效位，一般图片是由三种颜色组成，LSB隐写修改图片中的最低的1bit，可将信息隐藏在图片之中，通过人眼无法察觉该隐写方式一般只能用于<strong>PNG、BMP这类无损格式</strong>，像JPEG这种有损格式是不会有的。（注意：判断格式不能看文件扩展名，扩展名并不完全能代表一个图片的格式，需要看文件的二进制数据头）</p>
+<p><font size="4"> 对于LSB隐写<br>   1)可使用Stegsolve工具辅助分析 </font></p>
+<ol>
+<li>打开加密图片后，选择Analyse-DataExtract</li>
+<li>Bit Planes 选中Reg、Green、Blue的第0位</li>
+<li>Bit Order选中LSBFirst</li>
+<li>Bit Plane Order选中RGB GRB BGR等</li>
+</ol>
+<p>  <font size="4"> 2)也可以使用github上的小工具分析 </font><br>   工具的用法在github上写的都挺清楚的</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/RobinDavid/LSB-Steganography">lsb工具</a></p>
+</blockquote>
+<h3 id="2-3-outguess隐写"><a href="#2-3-outguess隐写" class="headerlink" title="2.3 outguess隐写"></a>2.3 outguess隐写</h3><p>   对于outguess隐写，直接使用outguess工具即可，后文会讲到</p>
+<h3 id="2-4-f5隐写"><a href="#2-4-f5隐写" class="headerlink" title="2.4 f5隐写"></a>2.4 f5隐写</h3><p>   同样f5隐写，也可直接使用f5工具</p>
+<h2 id="3-破解隐写的常用工具介绍"><a href="#3-破解隐写的常用工具介绍" class="headerlink" title="3.破解隐写的常用工具介绍"></a>3.破解隐写的常用工具介绍</h2><h3 id="3-1-stegsolve-jar"><a href="#3-1-stegsolve-jar" class="headerlink" title="3.1 stegsolve.jar"></a>3.1 stegsolve.jar</h3><p>本质上就是一个Java文件，要使用的前提是配置好Java的环境，然后就可以直接双击打开就好</p>
+<blockquote>
+<p>附上链接<a target="_blank" rel="noopener" href="http://www.caesum.com/handbook/Stegsolve.jar">stegsolve</a></p>
+</blockquote>
+<p>用法我个人目前用的较多的就是</p>
+<ul>
+<li>动图的逐帧阅读</li>
+<li>lsb隐写的初步检测(方法在上文lsb隐写中提到过)</li>
+<li>图片的交互运算<br>更多功能可自行探究</li>
+</ul>
+<h3 id="3-2-outguess"><a href="#3-2-outguess" class="headerlink" title="3.2 outguess"></a>3.2 outguess</h3><p>outguess用于outguess隐写，安装方法可自行百度</p>
+<p><font size="4">获取相应的指令用法</font></p>
+<pre class=" language-bash"><code class="language-bash">outguess -help
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server
+<p><font size="4">加密</font></p>
+<pre class=" language-bash"><code class="language-bash">outguess -k <span class="token punctuation">[</span>secretkey<span class="token punctuation">]</span> -d hidden demo.jpg out.jpg
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate
+<blockquote>
+<p>secretkey为加密密码，不填则默认无密码，-k是密码选项<br>  -d表示加密，hidden是要加密的内容，demo.jpg会覆盖out.jpg</p>
+</blockquote>
+<p><font size="4">解密</font></p>
+<pre class=" language-bash"><code class="language-bash">outguess -k <span class="token punctuation">[</span>secretkey<span class="token punctuation">]</span> -r out.jpg hidden.txt
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy
+<blockquote>
+<p>同样，secretkey是密码，out.jpg是隐藏图片，hidden是隐写内容</p>
+</blockquote>
+<h3 id="3-3-zsteg"><a href="#3-3-zsteg" class="headerlink" title="3.3 zsteg"></a>3.3 zsteg</h3><p>zsteg可以检测PNG和BMP图片里的隐写数据，是一个比较强大的检测隐写的工具</p>
+<blockquote>
+<p>附上链接<a target="_blank" rel="noopener" href="https://github.com/zed-0xff/zsteg">zsteg</a></p>
+</blockquote>
+<p>目前，zsteg支持检测</p>
+<ul>
+<li>LSB steganography in PNG &amp; BMP（<strong>一般这个用的多</strong>）</li>
+<li>zlib-compressed data</li>
+<li>OpenStego</li>
+<li>Camouflage 1.2.1</li>
+<li>LSB with The Eratosthenes set<br><font size="4">用法</font></li>
+</ul>
+<pre class=" language-bash"><code class="language-bash">zsteg -h <span class="token comment" spellcheck="true">#帮助</span>
+zsteg hidden.png <span class="token comment" spellcheck="true">#检测图片的lsb信息</span>
+zsteg -E <span class="token string">"b1,bgr,lsb,xy"</span> hidden.png <span class="token operator">></span> out.txt <span class="token comment" spellcheck="true">#导出内容</span>
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<blockquote>
+<p>双引号中的内容得因具体而定</p>
+</blockquote>
+<h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h2><p>隐写算是misc中算是较为常见的一种题型，很多时候，在没有思路的情况下，可以往这方面多考虑考虑，至于是哪种隐写，就得看自己自行判断了，本文就到这里了，感谢阅读。</p>
 
                 
             </div>
@@ -588,7 +660,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://nanfa996.github.io/2022/06/14/hello-world/">https://nanfa996.github.io/2022/06/14/hello-world/</a>
+                    <a href="https://nanfa996.github.io/2022/07/19/ctf-za-xiang-tu-pian-yin-xie-zong-jie/">https://nanfa996.github.io/2022/07/19/ctf-za-xiang-tu-pian-yin-xie-zong-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -625,7 +697,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/ctf/">
+                                    <span class="chip bg-color">ctf</span>
+                                </a>
+                            
+                                <a href="/tags/misc/">
+                                    <span class="chip bg-color">misc</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1064,29 +1144,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/07/07/ge-ren-ctf-za-xiang-jing-yan-bu-ding-qi-geng-xin/">
+                <a href="/2022/07/19/ctf-za-xiang-tu-pian-yin-xie-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="个人ctf杂项经验(不定期更新)">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="ctf杂项图片隐写总结">
                         
-                        <span class="card-title">个人ctf杂项经验(不定期更新)</span>
+                        <span class="card-title">ctf杂项图片隐写总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            个人ctf杂项经验(不定期更新)1.前言  这是我个人在打ctf过程中总结的一些微不足道的经验，供我学习使用，当然也很乐意分享。主要包括    图片    视频（音频）    解密    其他
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1099,6 +1180,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1118,16 +1200,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/06/14/hello-world/">
+                <a href="/2022/07/08/yong-hexo-xie-bo-ke-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="用hexo写博客总结">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">用hexo写博客总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1138,17 +1220,32 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-08
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            __南筏。
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
